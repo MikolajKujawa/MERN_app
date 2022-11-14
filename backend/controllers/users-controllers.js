@@ -21,7 +21,7 @@ const signup = async (req, res, next) => {
     return next(new HttpError("Invalid inputs data!", 422));
   }
 
-  const { name, email, password, places } = req.body;
+  const { name, email, password } = req.body;
 
   let existingUser;
   try {
@@ -45,7 +45,7 @@ const signup = async (req, res, next) => {
     image:
       "https://img.freepik.com/premium-photo/young-handsome-man-with-beard-isolated-keeping-arms-crossed-frontal-position_1368-132662.jpg?w=2000",
     password,
-    places,
+    places: [],
   });
 
   try {
