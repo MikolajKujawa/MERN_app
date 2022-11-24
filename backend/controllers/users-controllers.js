@@ -43,7 +43,7 @@ const signup = async (req, res, next) => {
     name,
     email,
     image:
-      "https://img.freepik.com/premium-photo/young-handsome-man-with-beard-isolated-keeping-arms-crossed-frontal-position_1368-132662.jpg?w=2000",
+      "https://polki.pl/foto/4_3_LARGE/najbardziej-pozadany-typ-faceta-faceci-lumber-223872.jpg",
     password,
     places: [],
   });
@@ -77,7 +77,12 @@ const login = async (req, res, next) => {
     return next(error);
   }
 
-  res.status(200).json({ message: "Logged in!" });
+  res
+    .status(200)
+    .json({
+      message: "Logged in!",
+      user: existingUser.toObject({ getters: true }),
+    });
 };
 
 exports.getUsers = getUsers;
