@@ -49,16 +49,16 @@ const getPlacesByUserId = async (req, res, next) => {
 const createPlace = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    throw new HttpError("Invalid inputs data!", 422);
+    return next(new HttpError("Invalid inputs data!", 422));
   }
 
-  const { title, description, coordinates, address, creator } = req.body;
+  const { title, description, address, creator } = req.body;
 
   const createdPlace = new Place({
     title,
     description,
     address,
-    location: coordinates,
+    // location: coordinates,
     image:
       "https://newyorkyimby.com/wp-content/uploads/2020/09/DSCN0762-777x1036.jpg",
     creator,
