@@ -19,6 +19,7 @@ App has backend with API validations, it has connection with database (MongoDB).
 - React Context
 - Form validation
 - Login/Logout mechanism
+- Authentication
 - React Router
 - Custom hooks
 - Backend
@@ -43,7 +44,6 @@ App has backend with API validations, it has connection with database (MongoDB).
 
 ## TODO
 
-- Connecting Frontend to Backend
 - Connect with Google API
 - Create Authentication
 - Deployment
