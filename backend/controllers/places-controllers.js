@@ -1,5 +1,7 @@
 const { validationResult } = require("express-validator");
 const { default: mongoose } = require("mongoose");
+const fs = require("fs");
+
 const HttpError = require("../models/http-error");
 const Place = require("../models/place");
 const User = require("../models/user");
@@ -59,8 +61,7 @@ const createPlace = async (req, res, next) => {
     description,
     address,
     // location: coordinates,
-    image:
-      "https://newyorkyimby.com/wp-content/uploads/2020/09/DSCN0762-777x1036.jpg",
+    image: req.file.path,
     creator,
   });
 
@@ -146,6 +147,8 @@ const deletePlace = async (req, res, next) => {
     return next(error);
   }
 
+  const imagePath = place.image;
+
   try {
     const sess = await mongoose.startSession();
     sess.startTransaction();
@@ -160,6 +163,10 @@ const deletePlace = async (req, res, next) => {
     );
     return next(error);
   }
+
+  fs.unlink(imagePath, (err) => {
+    console.log(err);
+  });
 
   res.status(200).json({ message: "Delete place successful." });
 };
