@@ -42,8 +42,7 @@ const signup = async (req, res, next) => {
   const createdUser = new User({
     name,
     email,
-    image:
-      "https://polki.pl/foto/4_3_LARGE/najbardziej-pozadany-typ-faceta-faceci-lumber-223872.jpg",
+    image: req.file.path,
     password,
     places: [],
   });
@@ -77,12 +76,10 @@ const login = async (req, res, next) => {
     return next(error);
   }
 
-  res
-    .status(200)
-    .json({
-      message: "Logged in!",
-      user: existingUser.toObject({ getters: true }),
-    });
+  res.status(200).json({
+    message: "Logged in!",
+    user: existingUser.toObject({ getters: true }),
+  });
 };
 
 exports.getUsers = getUsers;

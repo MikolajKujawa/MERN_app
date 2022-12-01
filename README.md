@@ -41,6 +41,7 @@ App has backend with API validations, it has connection with database (MongoDB).
 - Node.js <i>16.18.1</i>
 - Mongoose: <i>6.7.2</i>
 - Mongoose-unique-validator: <i>3.1.0</i>
+- Multer: <i>1.4.5-lts.1</i>
 
 ## TODO
 
