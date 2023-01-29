@@ -11,7 +11,7 @@
 ## General info
 
 This project is created with MERN stack
-It allows to see users and his places, you can also edit this places or add new. Application has authentication, you can loged in or loguot. All forms are validity.
+It allows to see users and his places, you can also edit this places or add new. Application has authentication with tokens, you can loged in or loguot and stay in your session. All forms are validity.
 App has backend with API validations, it has connection with database (MongoDB).
 
 ## Features
@@ -20,6 +20,7 @@ App has backend with API validations, it has connection with database (MongoDB).
 - Form validation
 - Login/Logout mechanism
 - Authentication
+- Using tokens and session
 - React Router
 - Custom hooks
 - Backend
@@ -42,11 +43,12 @@ App has backend with API validations, it has connection with database (MongoDB).
 - Mongoose: <i>6.7.2</i>
 - Mongoose-unique-validator: <i>3.1.0</i>
 - Multer: <i>1.4.5-lts.1</i>
+- Bcryptjs: <i>2.4.3</i>
+- Jsonwebtoken: <i>9.0.0</i>
 
 ## TODO
 
 - Connect with Google API
-- Create Authentication
 - Deployment
 
 ## Other informations
