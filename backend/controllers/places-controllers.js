@@ -54,7 +54,7 @@ const createPlace = async (req, res, next) => {
     return next(new HttpError("Invalid inputs data!", 422));
   }
 
-  const { title, description, address, creator } = req.body;
+  const { title, description, address } = req.body;
 
   const createdPlace = new Place({
     title,
@@ -62,12 +62,12 @@ const createPlace = async (req, res, next) => {
     address,
     // location: coordinates,
     image: req.file.path,
-    creator,
+    creator: req.userData.userId,
   });
 
   let user;
   try {
-    user = await User.findById(creator);
+    user = await User.findById(req.userData.userId);
   } catch (err) {
     const error = new HttpError("Creating place failet", 500);
     return next(error);
