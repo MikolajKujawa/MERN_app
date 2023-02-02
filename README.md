@@ -14,6 +14,10 @@ This project is created with MERN stack
 It allows to see users and his places, you can also edit this places or add new. Application has authentication with tokens, you can loged in or loguot and stay in your session. All forms are validity.
 App has backend with API validations, it has connection with database (MongoDB).
 
+<p align="center"><img src="https://github.com/MikolajKujawa/MERN_app/blob/main/src/assets/App-users.png" alt="App-users_screen" width="500px"/></p>
+
+<p align="center"><img src="https://github.com/MikolajKujawa/MERN_app/blob/main/src/assets/App-places.png" alt="App-places_screen" width="500px"/></p>
+
 ## Features
 
 - React Context
